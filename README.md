@@ -15,6 +15,8 @@ Head-to-head evaluation of six coding LLMs across eight low-level ML kernel task
 
 **Take every score with a grain of salt.** LLM judges can be consistent but are not infallible. The relative rankings are more useful than the exact numbers.
 
+**Tooling:** The first 3 challenges (KV-Cache, Fused Softmax+TopK, Layer Norm Backward) were generated using **pi-mono** as the harness. The remaining 5 challenges were generated using **opencode**.
+
 ---
 
 ## TL;DR — Final Rankings
