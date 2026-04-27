@@ -1,0 +1,119 @@
+/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+================================================================================
+Path B: Small Ternary Transformer from Scratch
+================================================================================
+
+Model config:
+  Vocab size: 50257
+  Dimensions: 512
+  Layers: 8
+  Heads: 8 (query), 4 (kv)
+  Head dim: 64
+  Hidden dims: 1376
+  Group size: 128
+
+Training config:
+  Seq length: 128
+  Batch size: 16
+  Steps: 1000
+  Learning rate: 0.0003
+
+Loading GPT-2 tokenizer...
+
+Creating ternary transformer...
+Model parameters: 74,802,688
+
+Verifying ternary projection...
+All layers ternary: True
+
+Loading dataset...
+Train: 1263 sequences
+Val: 153 sequences
+Batches: 79
+
+Pre-training generation:
+Prompt: 'The quick brown fox'
+Generated: 'The quick brown fox ignorant TODAY ignorant patents patents patents legalizing legalizing legalizing thyroid legalizing thyroid legalizing thyroid legalizing thyroid legalizing rugged rugged rugged'
+
+Training...
+Step 50/1000 | Loss: 7.7578 | LR: 1.50e-04 | Time: 12.0s
+Step 100/1000 | Loss: 6.2203 | LR: 3.00e-04 | Time: 24.0s
+Step 150/1000 | Loss: 6.0234 | LR: 2.98e-04 | Time: 36.1s
+Step 200/1000 | Loss: 5.4148 | LR: 2.91e-04 | Time: 48.4s
+
+--- Eval at step 200 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is the the of the of the of the of the of the of the of the of the of the of the of the of the of the of the'
+Perplexity: 2336.45
+----------------------------------------
+
+Step 250/1000 | Loss: 5.2760 | LR: 2.80e-04 | Time: 61.2s
+Step 300/1000 | Loss: 5.1935 | LR: 2.65e-04 | Time: 73.4s
+Step 350/1000 | Loss: 4.8010 | LR: 2.47e-04 | Time: 85.7s
+Step 400/1000 | Loss: 4.6665 | LR: 2.25e-04 | Time: 97.8s
+
+--- Eval at step 400 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a time in the team . The first of the first , the time in the team to the time . The team to the first , the time in'
+Perplexity: 1811.47
+----------------------------------------
+
+Step 450/1000 | Loss: 4.4202 | LR: 2.02e-04 | Time: 110.7s
+Step 500/1000 | Loss: 4.3216 | LR: 1.77e-04 | Time: 122.8s
+Step 550/1000 | Loss: 4.1200 | LR: 1.51e-04 | Time: 135.1s
+Step 600/1000 | Loss: 3.7733 | LR: 1.24e-04 | Time: 147.4s
+
+--- Eval at step 600 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a " for the album . The album has been a " with " and " . " The album is also been " . " The album 's'
+Perplexity: 2095.39
+----------------------------------------
+
+Step 650/1000 | Loss: 3.7585 | LR: 9.92e-05 | Time: 160.5s
+Step 700/1000 | Loss: 3.6868 | LR: 7.55e-05 | Time: 172.8s
+Step 750/1000 | Loss: 3.3660 | LR: 5.40e-05 | Time: 185.1s
+Step 800/1000 | Loss: 3.3051 | LR: 3.54e-05 | Time: 197.3s
+
+--- Eval at step 800 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is the firsturt of the game in the game in the game in the game in the game in the game in the game in the game in the game'
+Perplexity: 2165.05
+----------------------------------------
+
+Step 850/1000 | Loss: 3.4170 | LR: 2.04e-05 | Time: 210.4s
+Step 900/1000 | Loss: 3.1598 | LR: 9.23e-06 | Time: 222.6s
+Step 950/1000 | Loss: 3.3676 | LR: 2.37e-06 | Time: 234.7s
+Step 1000/1000 | Loss: 3.2906 | LR: 9.14e-10 | Time: 246.7s
+
+--- Eval at step 1000 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a " at the film is also a " for the album . The album is also known by one @-@ year . The album is a single'
+Perplexity: 2265.45
+----------------------------------------
+
+
+================================================================================
+FINAL EVALUATION
+================================================================================
+
+Loss: 11.0045 -> 3.6268
+
+Generation:
+'The capital of France is' -> 'The capital of France is a " by two @-@ inch ( 2 @.@ 5 m ) . The first two @-@ inch m ( 5 @.@'
+'Machine learning is a type of' -> 'Machine learning is a type of the song of the song 's album . The song was a " The album is a " The album 's " The album is " The album'
+'In 1492, Christopher Columbus' -> 'In 1492, Christopher Columbus the first season , a " – 0 season , a "s in a " – 2 @-@ 2 @-@ Star , and was released'
+'The quick brown fox' -> 'The quick brown fox of the German battleer to the Coldrum Stones . The ship was also a result of the Coldrum Stones and the United States and a result of'
+
+Perplexity: 2001.93
+
+Ternary verification: True
+
+Results saved to pathb_results.json
+Exception ignored in: <function ResourceTracker.__del__ at 0x3788f0ea0>
+Traceback (most recent call last):
+  File "/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 80, in __del__
+  File "/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 89, in _stop
+  File "/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/multiprocess/resource_tracker.py", line 102, in _stop_locked
+AttributeError: '_thread.RLock' object has no attribute '_recursion_count'

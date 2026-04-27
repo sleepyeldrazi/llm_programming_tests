@@ -1,18 +1,154 @@
-# Python
+# ============================================================
+# LLM Programming Tests — .gitignore
+# Only source code, training data, and .md files are tracked.
+# Everything else is excluded.
+# ============================================================
+
+# --- Python environments ---
+.venv/
+venv/
+env/
+ENV/
+.env/
+.python-version
+conda-meta/
+*.conda
+
+# --- Python bytecode and caches ---
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
+*.pyo
+*.pyd
 .Python
 
-# macOS
-.DS_Store
+# --- Python packaging and distribution ---
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.spec
+*.tar.gz
+*.whl
+MANIFEST
+PKG-INFO
+pip-delete-this-directory.txt
+pip-log.txt
 
-# IDE
+# --- Python testing and linting caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.lcov
+.pylintrc
+
+# --- IDE and editor artifacts ---
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.project
+.pydevproject
+.settings/
+.classpath
+sublime-project
+sublime-workspace
 
-# Session backups
-*.jsonl.bak
+# --- OS artifacts ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# --- Compiled extensions and shared objects ---
+*.so
+*.dylib
+*.dll
+*.o
+*.obj
+*.a
+*.lib
+
+# --- ML model weights and checkpoints ---
+*.pkl
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.onnx
+*.h5
+*.hdf5
+*.safetensors
+*.tflite
+*.pb
+*tensorboard/
+
+# --- Jupyter notebooks (artifacts, not the notebooks themselves) ---
+.ipynb_checkpoints/
+
+# --- Node.js (in case any tooling pulls it in) ---
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+
+# --- Docker ---
+.docker/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Temporary files ---
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# --- Database files ---
+*.sqlite
+*.sqlite3
+*.db
+
+# --- Virtual env symlinks ---
+*.egg-link
+
+# --- PyInstaller ---
+*.manifest
+*.manifest.tw
+
+# --- SageMaker ---
+.sagemaker/
+
+# --- RStudio ---
+.Rdata
+.RHistory
+.Rproj.user/
+
+# --- Terraform ---
+.terraform/
+*.tfstate*
+*.tfvars
+
+# --- AWS ---
+*.awscreds
+
+# --- General wildcards for safety ---
+*.min.js
+*.min.css
+*.bundle.js

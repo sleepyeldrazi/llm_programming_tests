@@ -1,0 +1,114 @@
+/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+================================================================================
+Path B: Small Ternary Transformer from Scratch
+================================================================================
+
+Model config:
+  Vocab size: 50257
+  Dimensions: 512
+  Layers: 8
+  Heads: 8 (query), 4 (kv)
+  Head dim: 64
+  Hidden dims: 1376
+  Group size: 128
+
+Training config:
+  Seq length: 128
+  Batch size: 16
+  Steps: 1000
+  Learning rate: 0.0003
+
+Loading GPT-2 tokenizer...
+
+Creating ternary transformer...
+Model parameters: 74,802,688
+
+Verifying ternary projection...
+All layers ternary: True
+
+Loading dataset...
+Loaded 216 paragraphs from train_data.txt
+Train: 194 sequences
+Val: 22 sequences
+Batches: 13
+
+Pre-training generation:
+Prompt: 'The quick brown fox'
+Generated: 'The quick brown fox▓ skew▓estingestingestingestingestingestingestingestingestingestingestingestingesting layoutsourgeourgeourge'
+
+Training...
+Step 50/1000 | Loss: 8.3724 | LR: 1.50e-04 | Time: 12.2s
+Step 100/1000 | Loss: 6.2204 | LR: 3.00e-04 | Time: 24.4s
+Step 150/1000 | Loss: 5.2360 | LR: 2.98e-04 | Time: 36.6s
+Step 200/1000 | Loss: 3.7915 | LR: 2.91e-04 | Time: 48.7s
+
+--- Eval at step 200 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a intelligence of the fundamental in the history of light and the field, and their- was and the field in the field is a between and the field'
+Perplexity: 2443.43
+----------------------------------------
+
+Step 250/1000 | Loss: 2.2835 | LR: 2.80e-04 | Time: 61.8s
+Step 300/1000 | Loss: 0.9320 | LR: 2.65e-04 | Time: 74.2s
+Step 350/1000 | Loss: 0.2144 | LR: 2.47e-04 | Time: 86.7s
+Step 400/1000 | Loss: 0.0591 | LR: 2.25e-04 | Time: 99.1s
+
+--- Eval at step 400 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is the fundamental of 1956, though the study of 1956. It has been a in a global: a global in a vast that would be remarkable in a'
+Perplexity: 4908.47
+----------------------------------------
+
+Step 450/1000 | Loss: 0.0426 | LR: 2.02e-04 | Time: 112.2s
+Step 500/1000 | Loss: 0.0378 | LR: 1.77e-04 | Time: 124.5s
+Step 550/1000 | Loss: 0.0353 | LR: 1.51e-04 | Time: 136.8s
+Step 600/1000 | Loss: 0.0326 | LR: 1.24e-04 | Time: 149.0s
+
+--- Eval at step 600 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a cycles of optimism are the field was formally founded in 1956. Early researchers confidently predicted that has been than anticipated, leading to researchers in a generation to'
+Perplexity: 5324.71
+----------------------------------------
+
+Step 650/1000 | Loss: 0.0312 | LR: 9.92e-05 | Time: 162.2s
+Step 700/1000 | Loss: 0.0309 | LR: 7.55e-05 | Time: 174.4s
+Step 750/1000 | Loss: 0.0295 | LR: 5.40e-05 | Time: 186.7s
+Step 800/1000 | Loss: 0.0289 | LR: 3.54e-05 | Time: 198.8s
+
+--- Eval at step 800 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a experienced of cycles. The has since the field was formally founded in 1956, and formally founded in which 1956. Early researchers predicted that machines would match'
+Perplexity: 5580.54
+----------------------------------------
+
+Step 850/1000 | Loss: 0.0283 | LR: 2.04e-05 | Time: 211.7s
+Step 900/1000 | Loss: 0.0278 | LR: 9.23e-06 | Time: 224.1s
+Step 950/1000 | Loss: 0.0271 | LR: 2.37e-06 | Time: 236.5s
+Step 1000/1000 | Loss: 0.0261 | LR: 9.14e-10 | Time: 248.9s
+
+--- Eval at step 1000 ---
+Prompt: 'Artificial intelligence is'
+Generated: 'Artificial intelligence is a experienced cycles of optimism and disappointment since the field was formally founded in 1956. Early researchers confidently predicted that machines would match human intelligence within a generation.'
+Perplexity: 5632.72
+----------------------------------------
+
+
+================================================================================
+FINAL EVALUATION
+================================================================================
+
+Loss: 11.1198 -> 0.0161
+
+Generation:
+'The capital of France is' -> 'The capital of France is a eukary toeseses are a bustling period, and be proteins is a double forms in which a planet that has a planet that an'
+'Machine learning is a type of' -> 'Machine learning is a type of fundamental: how human behavior, from the study of light-years, and the study of light-years, while the study of light-dimensional was'
+'In 1492, Christopher Columbus' -> 'In 1492, Christopher Columbus together. The past the past algorithms of the past few century, cos individual be algorithms, and classical conditions through the past algorithms of the past states.'
+'The quick brown fox' -> 'The quick brown fox of human brain has expanded human technologies in its brain. It, a approximately eighty-years, the brain at a network of staggering that the form at'
+
+Perplexity: 5501.52
+
+Ternary verification: True
+
+Results saved to pathb_results.json

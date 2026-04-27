@@ -1,0 +1,119 @@
+/Users/sleepy/.pyenv/versions/3.12.0/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading Qwen/Qwen3-0.6B ...
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 33026.02it/s]
+  Original model loaded. type=Model
+  Config: ModelArgs(model_type='qwen3', hidden_size=1024, num_hidden_layers=28, intermediate_size=3072, num_attention_heads=16, rms_norm_eps=1e-06, vocab_size=151936, num_key_value_heads=8, max_position_embeddings=40960, rope_theta=1000000, head_dim=128, tie_word_embeddings=True, rope_scaling=None)
+  Ternary model created. Copying weights ...
+  Done. Model ready for ternary training.
+Loading train_data.txt (train) ...
+  Tokenized train: 44865 tokens (194 paragraphs)
+  Sequences: 174, seq_len=256
+Loading train_data.txt (validation) ...
+  Tokenized validation: 3186 tokens (22 paragraphs)
+  Sequences: 12, seq_len=256
+
+--- Pre-training verification ---
+
+============================================================
+VERIFICATION: Checking ternary weight projection
+============================================================
+
+  All weights ternary: YES
+
+============================================================
+PERPLEXITY MEASUREMENT (pre-training)
+============================================================
+  Loss: 14.1912
+  Perplexity: 1455957.31
+
+============================================================
+Training: 1500 steps, batch_size=2, lr=0.0005
+============================================================
+
+  step    0 | loss 14.5578 | ppl 2100786.23 | lr 1.67e-05 | 1.2s
+  step   50 | loss 7.8405 | ppl 2541.52 | lr 5.00e-04 | 51.4s
+  step  100 | loss 7.0606 | ppl 1165.16 | lr 5.00e-04 | 101.7s
+  step  150 | loss 7.0232 | ppl 1122.33 | lr 5.00e-04 | 152.1s
+  step  200 | loss 6.5257 | ppl 682.47 | lr 5.00e-04 | 202.6s
+  step  250 | loss 6.4660 | ppl 642.90 | lr 5.00e-04 | 252.4s
+  step  300 | loss 6.3336 | ppl 563.17 | lr 5.00e-04 | 302.6s
+  >>> EVAL step 300: val_loss=7.1340 val_ppl=1253.90
+  step  350 | loss 5.7202 | ppl 304.95 | lr 5.00e-04 | 354.8s
+  step  400 | loss 5.7480 | ppl 313.56 | lr 5.00e-04 | 404.7s
+  step  450 | loss 5.5215 | ppl 250.02 | lr 5.00e-04 | 454.5s
+  step  500 | loss 5.4706 | ppl 237.61 | lr 5.00e-04 | 504.2s
+  step  550 | loss 4.9253 | ppl 137.73 | lr 5.00e-04 | 554.0s
+  step  600 | loss 4.8654 | ppl 129.73 | lr 5.00e-04 | 603.9s
+  >>> EVAL step 600: val_loss=7.5549 val_ppl=1910.02
+  step  650 | loss 4.1230 | ppl 61.75 | lr 5.00e-04 | 655.3s
+  step  700 | loss 3.5311 | ppl 34.16 | lr 5.00e-04 | 705.1s
+  step  750 | loss 3.2821 | ppl 26.63 | lr 5.00e-04 | 754.9s
+  step  800 | loss 1.8084 | ppl 6.10 | lr 5.00e-04 | 804.5s
+  step  850 | loss 2.3942 | ppl 10.96 | lr 5.00e-04 | 854.3s
+  step  900 | loss 0.8360 | ppl 2.31 | lr 5.00e-04 | 904.3s
+  >>> EVAL step 900: val_loss=9.3404 val_ppl=11389.14
+  step  950 | loss 2.3829 | ppl 10.84 | lr 5.00e-04 | 955.8s
+  step 1000 | loss 0.9523 | ppl 2.59 | lr 5.00e-04 | 1005.7s
+  step 1050 | loss 0.6013 | ppl 1.82 | lr 5.00e-04 | 1055.9s
+  step 1100 | loss 0.6016 | ppl 1.83 | lr 5.00e-04 | 1106.3s
+  step 1150 | loss 0.4681 | ppl 1.60 | lr 5.00e-04 | 1156.7s
+  step 1200 | loss 0.4516 | ppl 1.57 | lr 5.00e-04 | 1207.0s
+  >>> EVAL step 1200: val_loss=9.7961 val_ppl=17963.18
+  step 1250 | loss 0.3912 | ppl 1.48 | lr 5.00e-04 | 1258.5s
+  step 1300 | loss 0.4163 | ppl 1.52 | lr 5.00e-04 | 1308.3s
+  step 1350 | loss 0.2625 | ppl 1.30 | lr 5.00e-04 | 1358.0s
+  step 1400 | loss 0.2382 | ppl 1.27 | lr 5.00e-04 | 1407.9s
+  step 1450 | loss 0.3380 | ppl 1.40 | lr 5.00e-04 | 1458.1s
+
+Training complete in 1506.9s
+  Final loss: 0.1829 (ppl=1.20)
+  Loss improvement: 12.8962 -> 0.2230
+
+--- Post-training verification ---
+
+============================================================
+VERIFICATION: Checking ternary weight projection
+============================================================
+
+  All weights ternary: YES
+
+============================================================
+PERPLEXITY MEASUREMENT (post-training)
+============================================================
+  Loss: 10.3330
+  Perplexity: 30730.56
+
+============================================================
+TEXT GENERATION
+============================================================
+Prompt: 'The capital of France is'
+
+Generated:
+The capital of France is locally indistinguishable from the effects of acceleration. A person in the modern science of electromitation, which describes the concentrations of the twentieth century and that is estimated to rise but harmful forms the common range of others. The Big Bang is at the universe, from its deep window in the universe, the
+
+============================================================
+TEXT GENERATION
+============================================================
+Prompt: 'In mathematics, a prime number is'
+
+Generated:
+In mathematics, a prime number is at work with a deep ancient world.
+
+The theory was a complex mass of which known thinkers could only an electromagnetic mass of whichativity. Erimbential mechanics, the products of black Lovel, Er cells, and Leolf treating quantum logic, arguing that the theory of stars, including Descoring and
+
+============================================================
+TEXT GENERATION
+============================================================
+Prompt: 'The most important thing about'
+
+Generated:
+The most important thing about the from the world, the statistical description of culturalized data and cultural practices, as composers sought to be understood in terms of terms and space. The human science of cryptography, from the natural mechanics of John Lovmic, published, and formalism since the United Rights, published in 292
+
+============================================================
+SUMMARY
+============================================================
+  Pre-training perplexity:  1455957.31
+  Post-training perplexity: 30730.56
+  Loss trajectory: 14.5578 -> 0.1829
+  Training steps: 1500
